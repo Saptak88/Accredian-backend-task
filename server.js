@@ -50,6 +50,7 @@ app.post("/api/newReferral", async (req, res) => {
 
         // Skip database interaction in production since no free MySQL cloud service is available
         if (process.env.NODE_ENV === "production") {
+            console.log("Referral received.");
             return res.status(201).json({ message: "Referral received (DB skipped in production)." });
         }
 
